@@ -1,0 +1,64 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+			<main class="content">
+				<div class="container-fluid p-0">
+
+					<div class="mb-3">
+						<h1 class="h3 d-inline align-middle">Add Classrooms and Levels </h1>
+						
+					</div>
+					<div class="row">
+						
+
+							<div class="col-12 col-md-6">
+								<div class="card">
+									
+									
+									<div class="card-header">
+										<h5 class="card-title mb-0">Register Classroom</h5>
+									</div>
+									<div class="card-body">
+									<form action="{{url_for('classrom_reg')}}" method="POST">
+										<div >
+											<label class="form-label" >Classroom Name</label>
+											<input type="text" name="classroom_name" class="form-control" placeholder="Classroom Name">
+										</div>
+										<br>
+										<input type="submit" class="btn btn-danger" value="Create"/>
+									</form>
+									</div>
+								</div>
+							</div>
+						
+						
+							<div class="col-12 col-md-6">
+								<div class="card">
+									
+									<div class="card-header">
+										<h5 class="card-title mb-0">Register Level</h5>
+									</div>
+									<div class="card-body">
+										<form action="{{url_for('levels_reg')}}" method="POST">
+										<div >
+											<label class="form-label" >Class Name </label>
+											<input type="text" name="class_name" class="form-control" placeholder="Class Name">
+										</div>
+										<br>
+										<input type="submit" class="btn btn-success" value="Create">
+										</form>
+									</div>
+								</div>
+							</div>
+						
+
+						
+
+			
+
+				</div>
+			</main>
+
+{% endblock %}

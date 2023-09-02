@@ -1,0 +1,245 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+			<main class="content">
+				<div class="container-fluid p-0">
+
+					<div class="mb-3">
+						<h1 class="h3 d-inline align-middle">Start Monitoring Exam</h1>
+						<a class="badge bg-dark text-white ms-2" style="text-decoration: none;" href="#">
+      View all exams to be done in order
+  </a>
+					</div>
+					<div class="row">
+						<div class="col-12 col-md-6">
+							<div class="card" >
+								
+								<!-- <img class="card-img-top" src="{{url_for('face_recognition_exam') }}" > -->
+								<img class="card-img-top" src="{{url_for('launch_camera1') }}" >
+								
+								<div class="card-header pb-0 ">
+									<h5 class="card-title mb-0">The Exam code is : <span style="font-weight:bolder">L12-10-23  </span>  &nbsp;&nbsp; <p class="badge bg-danger text-white ms-10 " id="demo" ></p>  </h5>
+								</div>
+								<div class="card-body pt-0"  style="padding-top:0;">
+									<p class="card-text">
+										<!--<table>
+											<tr>
+												<td> Class Name:</td> 
+												<td><span style="font-weight:bolder">ITT1</span> </td>
+											</tr>
+											<tr>
+												<td>Subject:</td>
+												<td> <span style="font-weight:bolder">Algorithme</span></td>
+											</tr>
+											<tr>
+												<td>Start Time:</td>
+												<td> <span style="font-weight:bolder">10H</span></td>
+											</tr>
+											<tr>
+												<td>Duration:</td>
+												<td><span style="font-weight:bolder">2H</span></td>
+											</tr>
+											
+											<tr>
+												<td>Exam-Date:</td>
+												<td><span style="font-weight:bolder">21/04/2023</span></td>
+											</tr>
+											<tr>
+												<td>Assignee:</td>
+												<td><span style="font-weight:bolder"> Tenekeu</span></td>
+											</tr>
+											<tr>
+												<td>Exam-Classroom:</td>
+												<td><span style="font-weight:bolder"> L21</span></td>
+											</tr>
+										</table> -->
+										Gate
+									</p>
+									<a href="{{ url_for('live_exam_gate') }}" class="btn btn-primary">Go to Gate</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-md-6">
+							<div class="card">
+								<img class="card-img-top" src="{{url_for('camera_oject') }}" >
+								<div class="card-header pb-0 ">
+									<h5 class="card-title mb-0">The Exam code is : <span style="font-weight:bolder">L12-10-23  </span>  &nbsp;&nbsp; <p class="badge bg-danger text-white ms-10" id="demo"></p>  </h5>
+								</div>
+								<div class="card-body pt-0"  style="padding-top:0;">
+									<p class="card-text">
+										<!-- <table>
+											<tr>
+												<td> Class Name:</td> 
+												<td><span style="font-weight:bolder">ITT1</span> </td>
+											</tr>
+											<tr>
+												<td>Subject:</td>
+												<td> <span style="font-weight:bolder">Algorithme</span></td>
+											</tr>
+											<tr>
+												<td>Start Time:</td>
+												<td> <span style="font-weight:bolder">10H</span></td>
+											</tr>
+											<tr>
+												<td>Duration:</td>
+												<td><span style="font-weight:bolder">2H</span></td>
+											</tr>
+											
+											<tr>
+												<td>Exam-Date:</td>
+												<td><span style="font-weight:bolder">21/04/2023</span></td>
+											</tr>
+											<tr>
+												<td>Assignee:</td>
+												<td><span style="font-weight:bolder"> Tenekeu</span></td>
+											</tr>
+											<tr>
+												<td>Exam-Classroom:</td>
+												<td><span style="font-weight:bolder"> L21</span></td>
+											</tr>
+										</table>-->
+										Classroom
+										
+									</p>
+									<a href="{{ url_for('live_exam') }}" class="btn btn-primary">Go to Classroom</a>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+<!-- this is for the second line -->
+					<div class="row">
+						<div class="col-12 col-md-6">
+							<div class="card" >
+								
+								<!-- <img class="card-img-top" src="{{url_for('face_recognition_exam') }}" > -->
+								<img class="card-img-top" src="{{url_for('face_recognition_part') }}" >
+								
+								<div class="card-header pb-0 ">
+									<h5 class="card-title mb-0">The Exam code is : <span style="font-weight:bolder">L12-10-23  </span>  &nbsp;&nbsp; <p class="badge bg-danger text-white ms-10 " id="demo" ></p>  </h5>
+								</div>
+								<div class="card-body pt-0"  style="padding-top:0;">
+									<p class="card-text">
+										<!--<table>
+											<tr>
+												<td> Class Name:</td> 
+												<td><span style="font-weight:bolder">ITT1</span> </td>
+											</tr>
+											<tr>
+												<td>Subject:</td>
+												<td> <span style="font-weight:bolder">Algorithme</span></td>
+											</tr>
+											<tr>
+												<td>Start Time:</td>
+												<td> <span style="font-weight:bolder">10H</span></td>
+											</tr>
+											<tr>
+												<td>Duration:</td>
+												<td><span style="font-weight:bolder">2H</span></td>
+											</tr>
+											
+											<tr>
+												<td>Exam-Date:</td>
+												<td><span style="font-weight:bolder">21/04/2023</span></td>
+											</tr>
+											<tr>
+												<td>Assignee:</td>
+												<td><span style="font-weight:bolder"> Tenekeu</span></td>
+											</tr>
+											<tr>
+												<td>Exam-Classroom:</td>
+												<td><span style="font-weight:bolder"> L21</span></td>
+											</tr>
+										</table> -->
+										Gate
+									</p>
+									<a href="{{ url_for('live_exam_gate_face') }}" class="btn btn-primary">Go to Gate</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-md-6">
+							<div class="card">
+								<img class="card-img-top" src="{{url_for('objet_detection') }}" >
+								<div class="card-header pb-0 ">
+									<h5 class="card-title mb-0">The Exam code is : <span style="font-weight:bolder">L12-10-23  </span>  &nbsp;&nbsp; <p class="badge bg-danger text-white ms-10" id="demo"></p>  </h5>
+								</div>
+								<div class="card-body pt-0"  style="padding-top:0;">
+									<p class="card-text">
+										<!-- <table>
+											<tr>
+												<td> Class Name:</td> 
+												<td><span style="font-weight:bolder">ITT1</span> </td>
+											</tr>
+											<tr>
+												<td>Subject:</td>
+												<td> <span style="font-weight:bolder">Algorithme</span></td>
+											</tr>
+											<tr>
+												<td>Start Time:</td>
+												<td> <span style="font-weight:bolder">10H</span></td>
+											</tr>
+											<tr>
+												<td>Duration:</td>
+												<td><span style="font-weight:bolder">2H</span></td>
+											</tr>
+											
+											<tr>
+												<td>Exam-Date:</td>
+												<td><span style="font-weight:bolder">21/04/2023</span></td>
+											</tr>
+											<tr>
+												<td>Assignee:</td>
+												<td><span style="font-weight:bolder"> Tenekeu</span></td>
+											</tr>
+											<tr>
+												<td>Exam-Classroom:</td>
+												<td><span style="font-weight:bolder"> L21</span></td>
+											</tr>
+										</table>-->
+										Classroom
+										
+									</p>
+									<a href="{{ url_for('live_exam') }}" class="btn btn-primary">Go to Classroom</a>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+
+			<script>
+				// Set the date we're counting down to
+				var countDownDate = new Date("July 12, 2023 12:30:00").getTime();
+				
+				// Update the count down every 1 second
+				var x = setInterval(function() {
+				
+				  // Get today's date and time
+				  var now = new Date().getTime();
+					
+				  // Find the distance between now and the count down date
+				  var distance = countDownDate - now;
+					
+				  // Time calculations for days, hours, minutes and seconds
+				  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+				  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+				  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+					
+				  // Output the result in an element with id="demo"
+				  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+				  + minutes + "m " + seconds + "s ";
+					
+				  // If the count down is over, write some text 
+				  if (distance < 0) {
+					clearInterval(x);
+					document.getElementById("demo").innerHTML = "EXPIRED";
+				  }
+				}, 1000);
+				</script>
+{% endblock %}

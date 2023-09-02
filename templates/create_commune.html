@@ -1,0 +1,62 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+			<main class="content">
+				<div class="container-fluid p-0">
+
+					<div class="mb-3">
+						
+									
+  						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  						<h1 class="h3 d-inline align-middle">Connexion a une commune  </h1>
+						<br><br>
+  						<p>Connecter vous a une nouvelle commune pour qu'elle ai la possiblité de recevoir vos declarations  </p>
+					</div>
+					<form action="{{url_for('commune_reg')}}" method="POST"> 
+						<div class="card ">
+						<div class=" card-body ">
+
+							<div class=" row ">
+								
+							
+								<div class="col-4 ">
+									<label class="form-label" >departement</label>
+									<input type="text" name="departement" class="form-control" placeholder="departement">
+								</div>
+								<div class="col-4 ">
+									<label class="form-label" >region</label>
+									<input type="text" name="region" class="form-control" placeholder=" region commune">
+								</div>
+
+							
+							</div>
+							<br>
+							<div class=" row ">
+								
+								
+					
+								<div class="col-4 ">
+									<label class="form-label" >arrondissement</label>
+									<input type="text" name="arrondissement" class="form-control" placeholder="arrondissement">
+								</div>
+
+								<div class="col-4 ">
+									<label class="form-label" >titre de la commune</label>
+									<input type="text" name="titre_commune" class="form-control" placeholder="titre_commune ">
+								</div>
+							</div>
+							<br>
+					
+							<center><input type="submit" value="Ajouter Commune" class="btn btn-primary"></center>
+						</div>
+						</div>
+					</form>
+				
+						
+			</div>
+			</main>
+
+
+{% endblock %}	

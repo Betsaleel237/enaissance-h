@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<script type="text/javascript">
+	function displayTime() {
+		var currentTime = new Date();
+		var hours = currentTime.getHours();
+		var minutes = currentTime.getMinutes();
+		var seconds = currentTime.getSeconds();
+		
+		// Format the time with leading zeros if necessary
+		hours = (hours < 10 ? "0" : "") + hours;
+		minutes = (minutes < 10 ? "0" : "") + minutes;
+		seconds = (seconds < 10 ? "0" : "") + seconds;
+		
+		// Build the time string
+		var timeString = hours + ":" + minutes + ":" + seconds;
+		
+		// Display the time in the span element with id 'timeSpan'
+		document.getElementById('timeSpan').textContent = timeString;
+	  }
+	  setInterval(displayTime, 1000);
+</script>
+
+<script type="text/javascript">
+	function afficherDate() {
+		// Création d'un objet Date avec la date et l'heure actuelles
+		var date = new Date();
+	  
+		// Obtention des informations sur la date et l'heure
+		var jour = date.getDate();
+		var mois = date.getMonth() + 1;
+		var annee = date.getFullYear();
+	  
+		// Affichage de la date dans la balise p avec id "maBalise"
+		document.getElementById("maBalise").innerHTML = "Date : " + jour + "/" + mois + "/" + annee;
+	  }
+	
+	
+</script>
+			<main class="content">
+				<div class="container-fluid p-0">
+
+					
+
+					<div class="row">
+						<div class="col-12 col-lg-12 col-xxl-12 d-flex">
+							<div class="card flex-fill">
+								<div class="card-header">
+
+									<h5 class="card-title mb-0">Liste des actes de naissance disponible  <strong> <span id="maBalise"></span> </strong></h5>
+								
+									  
+								</div>
+								<table class="table table-hover my-0">
+									<thead>
+										<tr>
+											<th>Centre de santé</th>
+											<th>date de naissance</th>
+											<th>Heure de naissance</th>
+											<th>Nom pere </th>
+											<th>Nom Mere </th>
+											<th>Nom enfant </th>
+											<th>visualiser</th>
+											<th>Imprimer</th>
+											
+										</tr>
+									</thead>
+									<tbody>
+										
+										<tr>
+											<td></td>
+											<td ></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td> <a href="3"> <span data-feather="eye" class="badge bg-danger"></span> </a></td>
+											<td></td>
+										</tr>
+									
+										
+									</tbody>
+								</table>
+							</div>
+						</div>
+				
+					</div>
+
+
+				</div>
+			</main>
+
+{% endblock %}	

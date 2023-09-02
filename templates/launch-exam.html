@@ -1,0 +1,103 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+			<main class="content">
+				<div class="container-fluid p-0">
+
+					<div class="mb-3">
+						<h1 class="h3 d-inline align-middle">Visualiser toutes les cameras </h1>
+						<a class="badge bg-dark text-white ms-2" style="text-decoration: none;" href="#">
+      vous pouvez superviser en détaille les cameras dans toutes les zones
+  </a>
+					</div>
+					<div class="row">
+						<div class="col-12 col-md-6">
+							<div class="card" >
+								
+								<!--<img class="card-img-top" src="{{url_for('face_recognition_exam') }}" > -->
+								<img class="card-img-top" src="{{url_for('launch_camera2') }}" >
+								
+								
+								<div class="card-header pb-0 ">
+									<h5 class="card-title mb-0">Batiment A5 - Section 1    </h5>
+								</div>
+								<div class="card-body pt-0"  style="padding-top:0;">
+									<br>
+									<p class="card-text">
+											
+										6 &nbsp; <svg  width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#006400" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+														
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																								
+								
+										4  &nbsp;  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+										
+									</p>
+									<a href="{{ url_for('launch_exam_2camera') }}" class="btn btn-primary">Consulter section</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-md-6">
+							<div class="card">
+								<img class="card-img-top" src="{{ url_for('launch_camera2') }}" alt="exam">
+								<div class="card-header pb-0 ">
+									<h5 class="card-title mb-0">Batiment A5 - Section 2    </h5>
+								</div>
+								<div class="card-body pt-0"  style="padding-top:0;">
+									<br>
+									<p class="card-text">
+											
+										6 &nbsp; <svg  width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#006400" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+														
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																								
+								
+										  
+										  4  &nbsp; <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+										
+									</p>
+									<a href="{{url_for('launch_exam_2camera')}}" class="btn btn-primary">Go to exam</a>
+									
+								</div>
+							</div>
+						</div>
+
+			
+
+				</div>
+			</main>
+
+			<script>
+				// Set the date we're counting down to
+				var countDownDate = new Date("July 12, 2023 12:30:00").getTime();
+				
+				// Update the count down every 1 second
+				var x = setInterval(function() {
+				
+				  // Get today's date and time
+				  var now = new Date().getTime();
+					
+				  // Find the distance between now and the count down date
+				  var distance = countDownDate - now;
+					
+				  // Time calculations for days, hours, minutes and seconds
+				  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+				  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+				  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+					
+				  // Output the result in an element with id="demo"
+				  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+				  + minutes + "m " + seconds + "s ";
+					
+				  // If the count down is over, write some text 
+				  if (distance < 0) {
+					clearInterval(x);
+					document.getElementById("demo").innerHTML = "EXPIRED";
+				  }
+				}, 1000);
+				</script>
+{% endblock %}

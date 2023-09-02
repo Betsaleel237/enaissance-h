@@ -1,0 +1,113 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+			<main class="content">
+				<div class="container-fluid p-0">
+
+					<div class="mb-3">
+						
+									
+  						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  						<h1 class="h3 d-inline align-middle">Enregistement d'une naissance </h1>
+						<br><br>
+  						<p>remplissez ce formulaire selon les differents parametres pour declarer une naissance  </p>
+					</div>
+					<h1>{{id_commune}} - {{nom_commune}} - {{arrondissement}} - {{departement}} - {{region}}</h1>
+					<form action="{{url_for('declaration_reg')}}" method="POST"> 
+						<input type="hidden " required name="id_commune" value="{{id_commune}}" class="form-control" >
+						<input type="hidden " required name="id_hopital" value="1" class="form-control" >
+						<div class="card ">
+						<div class=" card-body ">
+
+							<div class=" row ">
+								
+								<div class="col-4 ">
+									
+									<input type="text" required name="nom_enfant" class="form-control" placeholder="Nom de l'enfant ">
+								</div>
+								<div class="col-4 ">
+									
+									<input type="text" required name="prenom_enfant" class="form-control" placeholder="Prenom de l'enfant">
+								</div>
+								<div class="col-4 ">
+									
+									<input type="text" required name="sexe_enfant" class="form-control" placeholder="Sexe de l'enfant">
+								</div>
+								<div class="col-4 ">
+									
+									<input type="date" required name="date_naissance" class="form-control" placeholder="Date de naissance">
+								</div>
+									
+								<div class="col-4 ">
+									
+									<input type="text" required name="lieu_naissance" class="form-control" placeholder="Lieu de naissance  ">
+								</div>
+								<div class="col-4 ">
+									
+									<input type="text" required name="type_naissance" class="form-control" placeholder="type de naissance">
+								</div>
+								<div class="col-4 ">
+									
+									<input type="text" required name="rang_naissance" class="form-control" placeholder=" Rang de naissance">
+								</div>
+
+								<div class="col-4 ">
+									
+									<input type="text" required name="poids_enfant" class="form-control" placeholder="Poids de l'enfant ">
+								</div>
+								<div class="col-4 ">
+									
+									<input type="text" required name="taille_enfant" class="form-control" placeholder="Taille de l'enfant">
+								</div>
+								<div class="col-4 ">
+									
+									<input type="text" required name="nom_mere" class="form-control" placeholder=" Nom de la mere">
+								</div>
+							</div>
+							
+							<div class=" row ">
+								
+								
+								<div class="col-4 ">
+									
+									<input type="Date" name="date_mere" class="form-control"  id="date" placeholder="date de naissance mere">
+								</div>
+								<div class="col-4 ">
+									
+									<input type="text" required name="lieu_mere" class="form-control" placeholder="lieu de naissance de la mere ">
+								</div>
+								<div class="col-4 ">
+									
+									<input type="text" required name="profession_mere" class="form-control" placeholder="profession de la mere">
+								</div>
+								<div class="col-4 ">
+									
+									<input type="text" required name="nationalite_mere" class="form-control" placeholder=" nationalite de la mere">
+								</div>
+								<div class="col-4 ">
+									
+									<input type="text" required name="nom_pere" class="form-control" placeholder="nom du pere">
+								</div>
+								<div class="col-4 ">
+									
+									<input type="date" required name="date_pere" class="form-control" placeholder=" date de naissance pere">
+								</div>
+
+								<div class="col-4 ">
+									
+									<input type="text" required name="lieu_pere" class="form-control" placeholder="lieu de naissance du pere">
+								</div>
+							<br>
+							<br> <center><input type="submit" value="Declarer la naissance"   class="btn btn-primary"></center>
+						</div>
+						</div>
+					</form>
+				
+						
+			</div>
+			</main>
+
+
+{% endblock %}	

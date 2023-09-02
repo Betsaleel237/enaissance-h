@@ -1,0 +1,105 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+			<main class="content">
+				<div class="container-fluid p-0">
+
+					<div class="mb-3">
+						
+								
+  						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  						<h1 class="h3 d-inline align-middle">Consult an Exam's Report </h1>
+						<br><br>
+  						<p>Do your researche according to these parameters </p>
+					</div>
+					<form action="#" method="POST"> 
+						<div class="card ">
+						<div class=" card-body ">
+
+							<div class=" row ">
+								
+								<div class="col-4 ">
+									<input type="text" class="form-control" placeholder="Subject ">
+								</div>
+								<div class="col-4 ">
+									<input type="text" class="form-control" placeholder="Exam-code">
+								</div>
+								<div class="col-4 ">
+									<input type="text" class="form-control" placeholder=" Exam-Classroom">
+								</div>
+
+							
+							</div>
+							<div class=" row ">
+								
+								
+								<div class="col-4 ">
+									<input type="date" class="form-control" placeholder="Exam Date">
+								</div>
+
+								<div class="col-4 ">
+									<input type="text" class="form-control" placeholder="Assignee">
+								</div>
+							</div>
+							<br>
+							<center><input type="submit" value="Search" class="btn btn-success"></center>
+						</div>
+						</div>
+					</form>
+				
+						<div class="row ">
+					<div class="col-12 col-lg-12 col-xxl-12 d-flex ">
+						<div class="card flex-fill">
+							<div class="card-header">
+
+								<h5 class="card-title mb-0">Achieved Exam</h5>
+							</div>
+							<table class="table table-hover my-0">
+								<thead>
+									<tr>
+										<th>Exam-code</th>
+											<th>Exam-classroom</th>
+											<th>Subject</th>
+											<th >Exam Date</th>
+											<th >Start Time</th>
+											<th >Duration</th>
+											<th>Status</th>
+											<th >Assignee</th>
+											<th >Presence</th>
+											<th >Surveillance</th>
+									</tr>
+								</thead>
+								<tbody>
+									{% for exam in exam_list %}
+							
+										{% if exam.status == "Done" %}
+  
+										<tr>
+											<td>{{ exam.exam_code }}</td>
+											<td >{{ exam.classroom_name }}</td>
+											<td>{{ exam.subject }}</td>
+											<td >{{ exam.date.d }}-{{ exam.date.m }}-{{ exam.date.y }}</td>
+											<td >{{ exam.start_time.h }} : {{ exam.start_time.min }}</td>
+											<td >{{ exam.Duration }}</td>
+											<td><span class="badge bg-success">{{ exam.status }}</span></td>
+											<td >{{ exam.assignee }}</td>
+										<td class="d-none d-md-table-cell"> <a href="#" ><span data-feather="eye"></span></a> </td>
+										<td class="d-none d-md-table-cell"> <a href="#" ><span data-feather="eye" class="text-success"></span></a> </td>
+									
+									</tr>
+										{% endif %}
+									
+									{% endfor %}
+								</tbody>
+							</table>
+						</div>
+					</div>
+			
+						</div>
+			</div>
+			</main>
+
+
+{% endblock %}	
