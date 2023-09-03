@@ -38,9 +38,6 @@ def login_ver():
         name=request.form.get("name")
         password=request.form.get("password")
         session["name"]=name
-        return redirect("/",name=name)
-        
-       
         return redirect(url_for("index"))    
     else:
         return redirect(url_for("login"))
