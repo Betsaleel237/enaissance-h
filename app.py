@@ -1,5 +1,5 @@
 
-from flask import Flask,render_template,request,redirect,url_for,session,jsonify,Response
+from flask import Flask,render_template,request,redirect,url_for,session,jsonify,Response,session
 from flask import Flask,render_template, request
 from flask_mysqldb import MySQL
 import json
@@ -8,8 +8,11 @@ import os
 import time
 import datetime
 import winsound
-
+from flask_session import Session
 app = Flask(__name__)
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+Session(app)
  
 
  
@@ -22,7 +25,7 @@ mysql = MySQL(app)
 
 
 
-@app.route("/login",methods=["GET"])
+@app.route("/login",methods=["GET","POST"])
 def login():
     name=request.args.get('name')
     password=request.args.get('password')
@@ -34,6 +37,8 @@ def login_ver():
         donnees=request.form
         name=request.form.get("name")
         password=request.form.get("password")
+        session["name"]=name
+        return redirect("/",name=name)
         
        
         return redirect(url_for("index"))    
@@ -42,6 +47,9 @@ def login_ver():
 
 @app.route("/")
 def index():
+    if not session.get('name'):
+        return redirect("/login")
+    name=request.args.get('name')
     cur = mysql.connection.cursor()
     cur.execute('''SELECT * FROM commune''')
     rv = cur.fetchall()
@@ -50,7 +58,7 @@ def index():
         print(rv[compteur])
         compteur=compteur+1
     
-    return render_template("index.html",liste_commune=rv)
+    return render_template("index.html",liste_commune=rv,name=name)
 
 
 @app.route("/register")
@@ -125,6 +133,34 @@ def naissanceh():
         compteur=compteur+1
     return render_template("naissanceh.html",liste_declaration=rv)
 
+@app.route("/rechercher", methods=['POST'])
+def rechercher():
+    if request.method == "POST":
+        nom_enfant=request.form.get("nom_enfant")
+        nom_pere=request.form.get("nom_pere")
+        nom_mere=request.form.get("nom_mere")
+        date_naissance=request.form.get("date_naissance")
+        sexe=request.form.get("sexe")
+        nom_commune=request.form.get("nom_commune")
+    nom_enfant="%"+nom_enfant+"%"    
+    nom_pere="%"+nom_pere+"%"    
+    nom_mere="%"+nom_mere+"%"    
+    date_naissance="%"+date_naissance+"%"    
+    sexe=sexe+"%"  
+    nom_commune="%"+nom_commune+"%"    
+    cur = mysql.connection.cursor()
+    query_string = " SELECT * FROM declaration, commune WHERE declaration.id_commune=commune.id_commune and nom_enfant LIKE %s and nom_pere LIKE %s and nom_mere LIKE %s and date_naissance LIKE %s and sexe_enfant LIKE %s and titre_commune LIKE %s "
+    #cur.execute(query_string, (nom_enfant,nom_pere,nom_mere,date_naissance,sexe, nom_commune))
+    cur.execute(query_string, [nom_enfant,nom_pere,nom_mere,date_naissance,sexe,nom_commune])
+    
+    rv = cur.fetchall()
+    compteur=0
+    while compteur < len(rv):
+        print(rv[compteur])
+        compteur=compteur+1
+    return render_template("naissanceh.html",liste_declaration=rv)
+
+
 @app.route("/declarer")
 def declarer():
     return render_template("declarer.html")
@@ -181,3 +217,4 @@ def create_exam_reg():
 
 if __name__=="__main__":
     app.run(debug=True)
+   #app.run(host='localhost', port=5000)

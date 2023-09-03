@@ -14,20 +14,20 @@
 						<br><br>
   						<p>effectué cette recherche selon plusieurs parametres </p>
 					</div>
-					<form action="#" method="POST"> 
+					<form action="{{url_for('rechercher')}}" method="POST"> 
 						<div class="card ">
 						<div class=" card-body ">
 
 							<div class=" row ">
 								
 								<div class="col-4 ">
-									<input type="text" class="form-control" placeholder="Nom enfant ">
+									<input type="text" name="nom_enfant" class="form-control" placeholder="Nom enfant ">
 								</div>
 								<div class="col-4 ">
-									<input type="text" class="form-control" placeholder="Nom Pere">
+									<input type="text" name="nom_pere" class="form-control" placeholder="Nom Pere">
 								</div>
 								<div class="col-4 ">
-									<input type="text" class="form-control" placeholder="Nom Mere">
+									<input type="text" name="nom_mere" class="form-control" placeholder="Nom Mere">
 								</div>
 
 							
@@ -36,14 +36,14 @@
 								
 								
 								<div class="col-4 ">
-									<input type="date" class="form-control" placeholder="Date de naissance">
+									<input type="date" name="date_naissance" class="form-control" placeholder="Date de naissance">
 								</div>
 								<div class="col-4 ">
-									<input type="text" class="form-control" placeholder="Sexe (M ou F)">
+									<input type="text" name="sexe" class="form-control" placeholder="Sexe (M ou F)">
 								</div>
 
 								<div class="col-4 ">
-									<input type="text" class="form-control" placeholder="Medecin">
+									<input type="text" name="nom_commune" class="form-control" placeholder="Commune">
 								</div>
 							</div>
 							<br>
